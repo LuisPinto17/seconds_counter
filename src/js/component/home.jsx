@@ -1,24 +1,44 @@
 import React from "react";
-
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
+import '../../styles/index.css';
+import Card from "../component/card.jsx"
+import Reloj from "./reloj";
 //create your first component
-const Home = () => {
+//far fa-clock
+
+const Home = ({counter}) => {
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className="main-contain">
+
+			{/* <div className="row">
+				<div className="col-1">
+				</div>
+				<div className="col-2">
+				<Card/>
+				</div>
+				<div className="col-2">
+				<Card segundos={counter} digitos="0" />
+				</div>
+				<div className="col-2">
+				<Card segundos={counter} digitos="1"/>
+				</div>
+				<div className="col-2">
+				<Card segundos={counter} digitos="2"/>
+				</div>
+				<div className="col-2">
+				<Card segundos={counter} digitos="3"/>
+				</div>
+				<div className="col-1">
+				</div>
+			</div> */}
+
+			<div className="contador">
+				<Reloj/>
+				<Card segundos={counter} digitos="0" />
+				<Card segundos={counter} digitos="1"/>
+				<Card segundos={counter} digitos="2"/>
+				<Card segundos={counter} digitos="3"/>
+			</div>
+
 		</div>
 	);
 };
